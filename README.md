@@ -1,1 +1,0 @@
-# bookmedik_docker

@@ -1,0 +1,5 @@
+#Bookmedik
+docker run -d --name bookmedik -p 8080:80 --network red_bookmedik --env DATABASE_USER=omar --env DATABASE_PASSWORD=omar --env DATABASE_HOST=mariadb 1423o/bookemedik:v1
+#Mariadb
+docker run -d --name mariadb -v /home/debian/github/bookmedik/volumen:/var/lib/mysql --env MARIADB_USER=omar --env MARIADB_PASSWORD=omar --env MARIADB_ROOT_PASSWORD=omar --env MARIADB_DATABASE=bookmedik mariadb:latest
+
