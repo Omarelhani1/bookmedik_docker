@@ -1,0 +1,30 @@
+version: '3.1'
+services:
+  bookmedik:
+    container_name: bookemedik
+    image: 1423o/bookemedik:v1 
+    restart: always
+    environment:
+      DATABASE_USER: omar
+      DATABASE_PASSWORD: omar
+      DATABASE_HOST: mariadb
+    ports:
+      - 80:80
+    volumes:
+      - bookmedik_data:/var/www/html/bookmedik
+    depends_on:
+      - mariadb
+  db:
+    container_name: mariadb
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: bookmedik
+      MYSQL_USER: omar
+      MYSQL_PASSWORD: omar
+      MYSQL_ROOT_PASSWORD: omar
+    volumes:
+      - mariadb_data:/var/lib/mysql
+volumes:
+    bookmedik_data:
+    mariadb_data:
