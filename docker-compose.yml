@@ -1,8 +1,8 @@
 version: '3.1'
 services:
   bookmedik:
-    container_name: bookemedik
-    image: 1423o/bookemedik:v1 
+    container_name: bookmedik
+    image: 1423o/bookmedik:v1 
     restart: always
     environment:
       DATABASE_USER: omar
