@@ -6,6 +6,8 @@ sed -i 's/$this->pass="";/$this->pass="'${DATABASE_PASSWORD}'";/g' /var/www/html
 
 sed -i 's/$this->host="localhost";/$this->host="'${DATABASE_HOST}'";/g' /var/www/html/core/controller/Database.php
 
-mysql  -h mariadb-u omar -pomar bookmedik < bookmedik/schema.sql
+sleep 10
+
+mysql  -u ${DATABASE_USER} -p${DATABASE_PASSWORD} -h ${DATABASE_HOST} bookmedik  < /var/www/html/schema.sql
 
 apache2ctl -D FOREGROUND

@@ -5,4 +5,4 @@ EXPOSE 80
 ADD ./bookmedik /var/www/html
 ADD variables.sh /usr/local/bin/variables.sh
 RUN chmod +x /usr/local/bin/variables.sh
-CMD ["/usr/local/bin/variables.sh"]
+CMD ["bash","/usr/local/bin/variables.sh"]
